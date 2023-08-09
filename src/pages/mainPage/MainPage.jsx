@@ -27,7 +27,7 @@ const MainPage = () => {
           <Carousel.Item key={slide}>
             <img
               className="d-block w-100"
-              src="http://31.146.208.130:2007/ImageHandler.ashx?file=Portal\Slider\samsuhao-ojaxshi.gif"
+              src="https://placehold.co/600x200"
               alt="First slide"
             />
           </Carousel.Item>
