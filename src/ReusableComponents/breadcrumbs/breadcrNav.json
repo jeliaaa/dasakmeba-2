@@ -1,0 +1,153 @@
+{
+    "about": [
+        {
+            "agency": [
+                {
+                    "text1": "baseInfo",
+                    "link1": "/about/agency/baseInfo"
+                },
+                {
+                    "text2": "brand",
+                    "link2": "/about/agency/brand"
+                },
+                {
+                    "text3": "structure",
+                    "link3": "/about/agency/structure"
+                }
+            ],
+            "gallery": [
+                {
+                    "text1": "photoGallery",
+                    "link1": "/about/gallery/photoGallery"
+                },
+                {
+                    "text2": "videoGallery",
+                    "link2": "/about/gallery/videoGallery"
+                }
+            ],
+            "news": [
+                {
+                    "text1": "news",
+                    "link1": "/about/news"
+                }
+            ],
+            "partners": [
+                {
+                    "text1": "internationally",
+                    "link1": "/about/partners/internationally"
+                },
+                {
+                    "text2": "ourPartners",
+                    "link2": "/about/partners/ourPartners"
+                }
+            ],
+            "projects": [
+                {
+                    "text1": "projects",
+                    "link1": "/about/projects"
+                }
+            ],
+            "statistics": [
+                {
+                    "text1": "data",
+                    "link1": "/about/statistics/data"
+                },
+                {
+                    "text2": "stats",
+                    "link2": "/about/statistics/stats"
+                },
+                {
+                    "text3": "researches",
+                    "link3": "/about/statistics/researches"
+                }
+            ]
+        }
+    ],
+    "ourServices": [
+        {
+            "detailedServices": [
+                {
+                    "text1": "hrServices",
+                    "link1": "/ourServices/detailedServices/hrServices"
+                },
+                {
+                    "text2": "seekerServices",
+                    "link2": "/ourServices/detailedServices/seekerServices"
+                }
+            ],
+            "services": [
+                {
+                    "text1": "organisations",
+                    "link1": "/ourServices/services/organisations"
+                },
+                {
+                    "text2": "jobSeekers",
+                    "link2": "/ourServices/services/jobSeekers"
+                },
+                {
+                    "text3": "grants",
+                    "link3": "/ourServices/services/grants"
+                }
+            ],
+            "jobsAbroad": [
+                {
+                    "text1": "migration",
+                    "link1": "/ourServices/jobsAbroad/migration"
+                },
+                {
+                    "text2": "workAbroad",
+                    "link2": "/ourServices/jobsAbroad/workAbroad"
+                }
+            ]
+        }
+    ],
+    "career": [
+        {
+            "blog": [
+                {
+                    "text1": "articles",
+                    "link1": "/career/blog/articles"
+                },
+                {
+                    "text2": "lessons",
+                    "link2": "/career/blog/lessons"
+                },
+                {
+                    "text3": "elbooks",
+                    "link3": "/career/blog/elbooks"
+                },
+                {
+                    "text4": "career",
+                    "link4": "/career/blog/career"
+                }
+            ],
+            "profAtlas": [
+                {
+                    "text1": "profesiograma",
+                    "link1": "/career/profAtlas/profesiograma"
+                },
+                {
+                    "text2": "advices",
+                    "link2": "/career/profAtlas/advices"
+                },
+                {
+                    "text3": "classification",
+                    "link3": "/career/profAtlas/classification"
+                },
+                {
+                    "text4": "calendar",
+                    "link4": "/career/profAtlas/calendar"
+                }
+            ]
+        }
+    ],
+    "guide": [
+        [
+            "instruction",
+            "structure",
+            "qA"
+        ]
+    ],
+    "contacts": [],
+    "pubInfo": []
+}

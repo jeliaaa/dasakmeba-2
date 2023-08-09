@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.scss";
+import MenuOfNav from "./components/navbar/MenuOfNav";
+import MainPage from "./pages/mainPage/MainPage";
+import BaseInfo from "./pages/About/agency/baseInfo/BaseInfo";
+import Grants from "./pages/ourServices/services/grants/Grants";
+import Footer from "./components/footer/Footer";
+import { useTranslation } from "react-i18next";
+import Structure from "./pages/About/agency/structure/Structure";
+import WorkerSingle from "./pages/About/agency/structure/WorkerSingle";
 
 function App() {
+  const { i18n } = useTranslation();
+  const selectedLanguage = i18n.language;
+
+  let fontPrimary = "--font-primary-ge"; // Default font
+  if (selectedLanguage === "en") {
+    fontPrimary = "--font-primary-en";
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
+      <MenuOfNav />
+      <Routes>
+        <Route index path="/" element={<MainPage />} />
+        <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
+        <Route path="/about/agency/structure" element={<Structure />} />
+        <Route path="/ourServices/services/grants" element={<Grants />} />
+        <Route path="//about/agency/structure/worker/:id" element={<WorkerSingle />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

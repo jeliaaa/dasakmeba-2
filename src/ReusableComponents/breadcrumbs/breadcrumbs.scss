@@ -1,0 +1,12 @@
+.nav-crumb{
+    text-decoration: underline;
+    color: blue !important;
+    cursor: pointer;
+}
+@media screen and (max-width: 490px) {
+    ol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

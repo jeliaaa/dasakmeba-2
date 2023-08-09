@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-primary-ge: 'Noto Serif Georgian';
+$font-primary-en: 'Poppins';
+
+:root{
+    --font-primary-ge: $font-primary-ge;
+    --font-primary-en: $font-primary-en;
+}
