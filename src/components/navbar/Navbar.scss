@@ -1,173 +1,97 @@
-.offcanvas-body {
-    a {
-        text-decoration: none;
+ul {
+    padding: 0;
+
+    .MuiPaper-root {
+        margin-top: 0%;
     }
 
-    .dropdown-item:active {
-        color: white;
-
-        a {
-            color: white;
-        }
+    li:hover {
+        background-color: rgb(184, 177, 177);
     }
+}
 
-}
-body{
-    margin-top: 114px;
-}
-.not-a{
-    color: black !important;
-    text-decoration: none;
+
+@media screen and (max-width: 1280px) {
+    .MuiPaper-root {
+        margin-top: 0;
+    }
 }
 
 .navBar {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    .dropdown-item:hover{
-        border: none;
-        a{
-            border: none;
-        }
-    }
-
-    /* to prevent the navbar getting covered up by other content */
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    li {
-        color: black;
-    }
-
-    
-    a:hover {
-        border-bottom: 3px solid blue;
-        transition: none;
-    }
-
-    .link:hover {
-        border-bottom: 3px solid blue;
-        transition: none;
-    }
-    .nav-item{
-        height: 100%;
-    }
-    .nav-item-single{
-        display: flex;
-        align-items: center;
-    }
-    .nav-item-single:hover {
-        border-bottom: 3px solid blue;
-    }
-    .not-a:hover{
-        border: none;
-    }
-    
-    ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin: 20px;
-        padding: 0;
-        margin-block-start: 0em;
-        margin-block-end: 0em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        padding-inline-start: 0px;
-    }
-
-}
-
-.brand {
-    a:hover{
-        border: none;
-    }
-    a {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        text-decoration: none;
-
-        span {
-            display: none;
-        }
-    }
-
-}
-
-.dropdown-center {
-    .show {
-        display: flex;
-        left: -200px !important;
-
-        a {
-            height: max-content;
-        }
-    }
-}
-
-@media screen and (max-width:1400px) {
-    .offcanvas_div{
-        align-items: flex-start !important;
-        .nav-item{
-            width: 100%;
-        }
-    }
-    .dropdown-center {
-        .show {
-            flex-direction: column;
-
-            hr {
-                display: none;
-            }
-
-            .dropdown-header {
-                text-align: center;
-            }
-
-            ul {
-                display: flex;
-                flex-direction: column;
-                list-style: none;
-                padding: 0;
-                margin-block-start: 0em;
-                margin-block-end: 0em;
-                margin-inline-start: 0px;
-                margin-inline-end: 0px;
-                padding-inline-start: 0px;
-            }
-        }
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .brand {
+        a:hover {
+            border: none;
+        }
+
         a {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+    }
+
+    .sign_acc {
+        display: none;
+    }
+
+    @media screen and (max-width: 680px) {
+        .brand {
             span {
+                display: none;
+            }
+        }
+
+        .sign_up {
+            gap: 0px;
+
+            .sign_btn {
+                display: none !important;
+            }
+
+            .sign_acc {
                 display: block;
             }
         }
+
+        section {
+            gap: 8px !important;
+        }
+
+
     }
 
-}
+    section {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 50px;
+        align-items: center;
 
-@media screen and (max-width:500px) {
-    .brand {
-        a {
-            span {
-                display: none;
+        .lang_change {
+            height: 35px;
+        }
+
+        .sign_up {
+            gap: 15px;
+
+            button {
+                padding: 10px 15px;
+                border-radius: 5px;
+                background-color: blue;
+                color: white;
+                font-weight: bolder;
+                border: none;
             }
         }
     }
-
-    .dropdown-center {
-        .show {
-            flex-direction: column;
-        }
-    }
-
 }
-.lang_change{
-    height: 35px;
+
+.accord {
+    border: none;
 }
