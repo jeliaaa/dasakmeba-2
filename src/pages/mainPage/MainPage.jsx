@@ -22,40 +22,7 @@ const MainPage = () => {
   ];
   
   return (
-    <div className='mainPage_wrapper'>
-      {/* <Carousel interval={1500} className='carousel_main'>
-        {numOfSlides.map((slide) => (
-          <Carousel.Item key={slide}>
-            <img
-              className="d-block w-100"
-              src="https://placehold.co/600x200"
-              alt="First slide"
-            />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <Container style={{ display: 'flex', justifyContent: 'flex-end' }} className='owl_container'>
-        <div className="col-md-3 owl_wrapper">
-          <Carousel interval={1500} className='owl w-100' variant='dark' touch={true} controls={false}   >
-            {menuItems.map((item) => (
-              <Carousel.Item key={item.id} className='text-center'>
-                <p>{t(`${item.title}`)}</p>
-                <h4><span>{item.number}</span></h4>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </div>
-      </Container>
-      <Container className='w-100 ed-programmes'>
-        <h2>{t('statements')}</h2>
-        <hr />
-        <div>
-          <button>
-            <span>{t('educationalProgrammes')}</span><span className='ed-programmes-count'>{numberOfProgrammes}</span>
-          </button>
-        </div>
-      </Container> */}
-
+    <div className='mainPage_wrapper' style={{backgroundColor: '#fff'}}>
       <Container className='news_container'>
         <div className='news_heading'>
           <h2>{t('news')}</h2>
@@ -70,7 +37,7 @@ const MainPage = () => {
           pagination={{ clickable: true }}
           mousewheel={true}
           keyboard={true}
-          slidesPerView={5}
+          slidesPerView={4}
           spaceBetween={30}
 
           className="news-swiper"
@@ -92,11 +59,6 @@ const MainPage = () => {
               slidesPerView: 4,
               spaceBetween: 30
             },
-            // when window width is >= 640px
-            1200: {
-              slidesPerView: 5,
-              spaceBetween: 40
-            }
           }}
         >
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (

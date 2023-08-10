@@ -9,7 +9,7 @@ const Footer = () => {
         { id: 3, name: 'linkedin', link: 'https://linkedin.com' }
     ]
     return (
-        <footer className='mt-5'>
+        <footer>
             <div className='col-md-4 brand'>
                 <img src={logo} alt='HR' />
             </div>

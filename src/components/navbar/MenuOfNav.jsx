@@ -213,7 +213,7 @@ const MenuOfNav = (props) => {
                 sx={{
                     md: { display: 'none' },
                     display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', height: '70vh', borderRadius: '15px', marginTop: '0px', position: 'fixed' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '70vh', borderRadius: '15px', marginTop: '0px', position: 'fixed' },
                 }}
                 open
             >
@@ -223,7 +223,7 @@ const MenuOfNav = (props) => {
                 sx={{
                     md: { display: 'none' },
                     display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', height: '75vh', borderRadius: '15px', marginTop: '100px', position: 'absolute' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '75vh', borderRadius: '15px', marginTop: '100px', position: 'absolute' },
                 }}
                 open
             >

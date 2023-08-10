@@ -22,11 +22,14 @@ function App() {
     <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
       <MenuOfNav />
       <div
-        style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          backgroundColor: "#ebedff",
+        }}
       >
-        <div
-          className="app_wrapper"
-        >
+        <div className="app_wrapper">
           <Routes>
             <Route index path="/" element={<MainPage />} />
             <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
