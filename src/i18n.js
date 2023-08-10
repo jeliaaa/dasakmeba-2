@@ -5,6 +5,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      menu: "Menu",
       main: 'Main',
       about: "About",
       baseInfo: "Base information",
@@ -67,6 +68,7 @@ const resources = {
   },
   ge: {
     translation: {
+      menu: "მენიუ",
       main: 'მთავარი',
       about: "ჩვენს შესახებ",
       baseInfo: "მთავარი ინფორმაცია",

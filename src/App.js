@@ -21,13 +21,25 @@ function App() {
   return (
     <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
       <MenuOfNav />
-      <Routes>
-        <Route index path="/" element={<MainPage />} />
-        <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
-        <Route path="/about/agency/structure" element={<Structure />} />
-        <Route path="/ourServices/services/grants" element={<Grants />} />
-        <Route path="//about/agency/structure/worker/:id" element={<WorkerSingle />} />
-      </Routes>
+      <div
+        style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
+      >
+        <div
+          className="app_wrapper"
+        >
+          <Routes>
+            <Route index path="/" element={<MainPage />} />
+            <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
+            <Route path="/about/agency/structure" element={<Structure />} />
+            <Route path="/ourServices/services/grants" element={<Grants />} />
+            <Route
+              path="//about/agency/structure/worker/:id"
+              element={<WorkerSingle />}
+            />
+          </Routes>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

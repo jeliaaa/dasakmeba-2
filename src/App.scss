@@ -1,1 +1,9 @@
 @import 'variables.scss';
+.app_wrapper{
+    width: 100vw;
+}
+@media screen and (min-width: 1280px) {
+    .app_wrapper{
+        width: 75vw;
+    }
+}

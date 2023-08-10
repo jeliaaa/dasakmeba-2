@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel, Container } from 'react-bootstrap'
 import './mainpage.scss'
 import { useTranslation } from 'react-i18next';
@@ -20,9 +20,10 @@ const MainPage = () => {
     { id: 4, number: 2333, title: 'adviceTaken' },
     { id: 5, number: 2222, title: 'activePlaces' }
   ];
+  
   return (
     <div className='mainPage_wrapper'>
-      <Carousel interval={1500} className='carousel_main'>
+      {/* <Carousel interval={1500} className='carousel_main'>
         {numOfSlides.map((slide) => (
           <Carousel.Item key={slide}>
             <img
@@ -53,7 +54,8 @@ const MainPage = () => {
             <span>{t('educationalProgrammes')}</span><span className='ed-programmes-count'>{numberOfProgrammes}</span>
           </button>
         </div>
-      </Container>
+      </Container> */}
+
       <Container className='news_container'>
         <div className='news_heading'>
           <h2>{t('news')}</h2>
@@ -103,7 +105,7 @@ const MainPage = () => {
                 <img src="https://picsum.photos/id/237/200/150" alt="..." />
                 <div>
                   <p>Lorem ipsum dolor impedit, vero eius, sit deserunt ratione eligendi</p>
-                  <p>20.05</p>
+                  <p>{1}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -111,10 +113,10 @@ const MainPage = () => {
         </Swiper>
       </Container>
 
-      <Container style={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', position:'relative'}} className='mt-5'>
-        <h2 style={{position:'absolute', top:0, left:10}}>{t('partners')}</h2>
-        <hr className='w-100 mt-5'/>
-        <div className='col-md-9 text-center m-0 p-0 ' style={{display:'flex', justifyContent:'center', margin:'0px'}}>
+      <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }} className='mt-5'>
+        <h2 style={{ position: 'absolute', top: 0, left: 10 }}>{t('partners')}</h2>
+        <hr className='w-100 mt-5' />
+        <div className='col-md-9 text-center m-0 p-0 ' style={{ display: 'flex', justifyContent: 'center', margin: '0px' }}>
           <Swiper
             direction={'vertical'}
             slidesPerView={1}
@@ -126,7 +128,7 @@ const MainPage = () => {
             modules={[Mousewheel, Pagination]}
             className="partners-swiper"
           >
-            <SwiperSlide><img src="https://academy.edu.ge/assets/img/logo.png" alt="cyberacademy"  /></SwiperSlide>
+            <SwiperSlide><img src="https://academy.edu.ge/assets/img/logo.png" alt="cyberacademy" /></SwiperSlide>
             <SwiperSlide><img src="https://gita.gov.ge/_nuxt/img/colored_ka.aee0290.png" alt="techpark" /></SwiperSlide>
           </Swiper>
         </div>
