@@ -1,25 +1,43 @@
 ul {
     padding: 0;
+    border-radius: 8px;
 
     .MuiPaper-root {
         margin-top: 0%;
-
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px !important;
+
     }
 
     li:hover {
         background-color: rgb(184, 177, 177);
     }
 }
+.nav-side{
+    overflow-y: scroll;
+    &::-webkit-scrollbar-thumb {
+        background-color: blue;
+        border: 4px solid transparent;
+        border-radius: 8px;
+        background-clip: padding-box;
+    }
+
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+}
+
 
 .MuiPaper-root {
     margin-top: 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+
+   
 }
 
 @media screen and (max-width: 1280px) {
     .MuiPaper-root {
         margin-top: 0;
+
     }
 }
 
@@ -27,7 +45,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 15px 0;
     .brand {
         a:hover {
             border: none;
@@ -100,4 +118,17 @@ ul {
 
 .accord {
     border: none;
+}
+
+.sign_in_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1300;
+}
+.modal-dialog{
+    z-index: 1300;
+}
+.modal-backdrop{
+    z-index: 1300;
 }

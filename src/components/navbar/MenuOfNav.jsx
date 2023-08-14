@@ -21,11 +21,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MenuIcon from '@mui/icons-material/MenuBook';
 import { useScroll } from '../../scrollContext';
 import { Dropdown, Menu, MenuButton, MenuItem } from '@mui/base';
+import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
 const MenuOfNav = (props) => {
 
     const { t, i18n } = useTranslation();
     const [val, setVal] = useState('');
+    const [show, setShow] = useState(false);
+
     const changeLanguage = (e) => {
         i18n.changeLanguage(e.target.value);
         setVal(e.target.value)
@@ -213,7 +216,7 @@ const MenuOfNav = (props) => {
                 sx={{
                     md: { display: 'none' },
                     display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '70vh', borderRadius: '15px', marginTop: '0px', position: 'fixed' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '70vh', borderRadius: '15px', marginTop: '0px', position: 'fixed', scrollbarWidth: '16px' },
                 }}
                 open
             >
@@ -223,7 +226,7 @@ const MenuOfNav = (props) => {
                 sx={{
                     md: { display: 'none' },
                     display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '75vh', borderRadius: '15px', marginTop: '100px', position: 'absolute' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '75vh', borderRadius: '15px', marginTop: '150px', position: 'absolute' },
                 }}
                 open
             >
@@ -241,27 +244,56 @@ const MenuOfNav = (props) => {
                     onClick={handleDrawerToggle}
                     sx={{ mr: 2, display: { sm: 'block', lg: 'none' } }}
                 >
-                    <MenuIcon />
+                    <i className="fa-solid fa-bars"></i>
                 </IconButton>
                 <Navbar.Brand className='brand'>
-                    <Link to={'/'}  >
+                    <Link to={'/dasakmeba-1'}  >
                         <img src={Brand} alt='logo' />
                         <span>აჭარის დასაქმების სააგენტო</span>
                     </Link>
                 </Navbar.Brand>
                 <section>
                     <div className="sign_up" style={{ display: "flex" }}>
-                        <button className='sign_btn'>Sign In</button>
-                        <button className='sign_btn'>Register</button>
-                        <div className='sign_acc'>
-                            <Dropdown>
-                                <MenuButton>Acc</MenuButton>
-                                <Menu style={{ border: '1px solid black', borderRadius: '5px', listStyle: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                                    <button>Sign In</button>
-                                    <button>Register</button>
-                                </Menu>
-                            </Dropdown>
-                        </div>
+                        <Button variant="primary" onClick={() => setShow(true)}>
+                            Sign in
+                        </Button>
+
+                        <Modal
+                            show={show}
+                            onHide={() => setShow(false)}
+                            dialogClassName="modal-90w"
+                            aria-labelledby="example-custom-modal-styling-title"
+                            className='sign_in_modal'
+                        >
+                            <Modal.Header closeButton className='text-center'>
+                                <Modal.Title id="example-custom-modal-styling-title" className='text-center'>
+                                    Sign in
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <Form className='text-center'>
+                                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                                        <Form.Label column sm="2">
+                                            Email
+                                        </Form.Label>
+                                        <Col sm="10">
+                                            <Form.Control type='email' placeholder='Email' />
+                                        </Col>
+                                    </Form.Group>
+
+                                    <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+                                        <Form.Label column sm="2">
+                                            Password
+                                        </Form.Label>
+                                        <Col sm="10">
+                                            <Form.Control type="password" placeholder="Password" />
+                                        </Col>
+                                    </Form.Group>
+                                <Link to={'/register'} className='text-center '>Register</Link>
+                                </Form>
+                            </Modal.Body>
+                        </Modal>
+
 
 
 

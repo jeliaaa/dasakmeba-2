@@ -16,7 +16,7 @@ const Structure = () => {
             .catch(err => console.error(err))
     }, [])
     return (
-        <Container>
+        <Container style={{backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px'}}>
             <PageHeadings heading={'structure'} />
             <Container>
                 <Table responsive>

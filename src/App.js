@@ -31,7 +31,7 @@ function App() {
       >
         <div className="app_wrapper">
           <Routes>
-            <Route index path="/" element={<MainPage />} />
+            <Route index path="/dasakmeba-1" element={<MainPage />} />
             <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
             <Route path="/about/agency/structure" element={<Structure />} />
             <Route path="/ourServices/services/grants" element={<Grants />} />
