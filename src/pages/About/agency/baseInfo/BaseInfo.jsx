@@ -6,9 +6,9 @@ import PageHeadings from '../../../../ReusableComponents/pages_headings/PageHead
 const BaseInfo = () => {
     const { t } = useTranslation();
     return (
-        <Container>
+        <Container style={{backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px'}}>
             <PageHeadings heading={'baseInfo'} />
-            <Container className='p-5 mt-3'>
+            <div className='p-5 mt-3'>
                 <h4>lor</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sed quaerat consequatur dolore! Dolore voluptas iusto atque provident consequuntur quo sed, distinctio quae incidunt temporibus voluptatibus assumenda labore, harum sit?</p>
                 <h4>lor</h4>
@@ -24,7 +24,7 @@ const BaseInfo = () => {
                 <h4>lor</h4>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, ad sunt sequi porro nisi eveniet corrupti, sint eius autem, fugit consectetur quis quos eligendi nulla similique modi veritatis quidem voluptate.</p>
 
-            </Container>
+            </div>
         </Container>
 
     )

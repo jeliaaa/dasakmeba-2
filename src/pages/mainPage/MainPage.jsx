@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Carousel, Container } from 'react-bootstrap'
+import React from 'react'
+import { Container } from 'react-bootstrap'
 import './mainpage.scss'
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,18 +8,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+import News from "../About/news/News"
 
-const numOfSlides = [0, 1, 2, 3, 4, 5];
 const MainPage = () => {
-  const numberOfProgrammes = 7;
   const { t } = useTranslation();
-  const menuItems = [
-    { id: 1, number: 2, title: 'companies' },
-    { id: 2, number: 21, title: 'seekers' },
-    { id: 3, number: 132, title: 'alreadyWorks' },
-    { id: 4, number: 2333, title: 'adviceTaken' },
-    { id: 5, number: 2222, title: 'activePlaces' }
-  ];
   
   return (
     <div className='mainPage_wrapper' style={{backgroundColor: '#fff'}}>
@@ -96,6 +88,7 @@ const MainPage = () => {
         </div>
 
       </Container>
+      
     </div >
   )
 }

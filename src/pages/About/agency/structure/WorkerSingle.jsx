@@ -16,7 +16,7 @@ const WorkerSingle = () => {
             .catch(err => console.error(err))
     }, [])
     return (
-        <Container >
+        <Container style={{backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px'}}>
             <PageHeadings heading={'structure'}>
                 <Breadcrumbs forbread={'agency'} />
             </PageHeadings>
@@ -26,7 +26,7 @@ const WorkerSingle = () => {
                     <div className='col-md-7 h-100'>
                         <h4>{t('nameSurname')} : {worker.name}</h4>
                         <h4>{t('username')} : {worker.username}</h4>
-                        <Accordion defaultActiveKey="0" flush>
+                        <Accordion defaultActiveKey="0" flush style={{width:'80%'}}>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>გამოცდილება</Accordion.Header>
                                 <Accordion.Body>
