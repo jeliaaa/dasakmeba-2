@@ -10,6 +10,7 @@ import Structure from "./pages/About/agency/structure/Structure";
 import WorkerSingle from "./pages/About/agency/structure/WorkerSingle";
 import Videos from "./ReusableComponents/vids/Videos";
 import { useEffect, useState } from "react";
+import Stats from "./ReusableComponents/stats/Stats";
 
 function App() {
   const { i18n } = useTranslation();
@@ -20,14 +21,14 @@ function App() {
   }
   const [isOpen, setIsOpen] = useState(true);
   const location = useLocation();
-  useEffect(()=>{
-    console.log(location.search)
-    if(location.pathname === '/dasakmeba-1'){
-      setIsOpen(true)
+  useEffect(() => {
+    console.log(location.search);
+    if (location.pathname === "/dasakmeba-1") {
+      setIsOpen(true);
     } else {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }, [location])
+  }, [location]);
 
   return (
     <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
@@ -39,7 +40,7 @@ function App() {
           flexDirection: "column",
           alignItems: "flex-end",
           backgroundColor: "#ebedff",
-          paddingBottom: '50px',
+          paddingBottom: "50px",
           justifyContent: "center",
         }}
       >
@@ -56,7 +57,11 @@ function App() {
           </Routes>
         </div>
         <div className="videos_wrapper">
-            {isOpen && <Videos />}
+          {isOpen && (
+            <>
+              <Videos /> <Stats />
+            </>
+          )}
         </div>
       </div>
 

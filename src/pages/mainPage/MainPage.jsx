@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {
@@ -28,8 +28,7 @@ const MainPage = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }} className='mt-5'>
+      {/* <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }} className='mt-5'>
         <h2 style={{ position: 'absolute', top: 0, left: 10 }}>{t('partners')}</h2>
         <hr className='w-100 mt-5' />
         <div className='col-md-9 text-center m-0 p-0 ' style={{ display: 'flex', justifyContent: 'center', margin: '0px' }}>
@@ -49,7 +48,7 @@ const MainPage = () => {
           </Swiper>
         </div>
 
-      </Container>
+      </Container> */}
 
     </div >
   )
