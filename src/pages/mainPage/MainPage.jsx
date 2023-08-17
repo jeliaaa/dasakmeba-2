@@ -8,64 +8,26 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-import News from "../About/news/News"
 
 const MainPage = () => {
   const { t } = useTranslation();
-  
+
   return (
-    <div className='mainPage_wrapper' style={{backgroundColor: '#fff'}}>
-      <Container className='news_container'>
-        <div className='news_heading'>
-          <h2>{t('news')}</h2>
-          <button className='news-btn'><Link to={'/'}>{t('news')}</Link></button>
-        </div>
-
-        <hr />
-        <Swiper
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          cssMode={true}
-          navigation={true}
-          pagination={{ clickable: true }}
-          mousewheel={true}
-          keyboard={true}
-          slidesPerView={4}
-          spaceBetween={30}
-
-          className="news-swiper"
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            },
-            620: {
-              slidesPerView: 2,
-              spaceBetween: 10
-            },
-            750: {
-              slidesPerView: 3,
-              spaceBetween: 20
-            },
-            // when window width is >= 480px
-            1000: {
-              slidesPerView: 4,
-              spaceBetween: 30
-            },
-          }}
-        >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-            <SwiperSlide key={item}>
-              <div className='news_card'>
-                <img src="https://picsum.photos/id/237/200/150" alt="..." />
-                <div>
-                  <p>Lorem ipsum dolor impedit, vero eius, sit deserunt ratione eligendi</p>
-                  <p>{1}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
+    <div className='mainPage_wrapper' style={{ backgroundColor: '#fff' }}>
+      <Swiper
+        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        cssMode={true}
+        navigation={true}
+        pagination={{ clickable: true }}
+        slidesPerView={1}
+        spaceBetween={30}
+        className="news-swiper"
+      >
+        {[1, 2].map((item) => (
+          <SwiperSlide key={item}>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
       <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }} className='mt-5'>
         <h2 style={{ position: 'absolute', top: 0, left: 10 }}>{t('partners')}</h2>
@@ -88,9 +50,8 @@ const MainPage = () => {
         </div>
 
       </Container>
-      
+
     </div >
   )
 }
-//{t('report')}
 export default MainPage

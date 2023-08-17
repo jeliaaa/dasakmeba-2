@@ -1,0 +1,19 @@
+.videos{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    img{
+        width: 30vw;
+        border-radius: 15px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .videos{
+        img{
+            width: 80vw;
+        }
+        flex-direction: column;
+    }
+}

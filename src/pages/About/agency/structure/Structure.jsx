@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Table } from 'react-bootstrap'
-import PageHeadings from '../../../../ReusableComponents/pages_headings/PageHeadings'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import './worker.scss'
+import Breadcrumbs from '../../../../ReusableComponents/breadcrumbs/Breadcrumbs'
 
 const Structure = () => {
     const { t } = useTranslation();
@@ -14,10 +14,12 @@ const Structure = () => {
             .then((res) => res.json())
             .then((data) => setData(data))
             .catch(err => console.error(err))
+
     }, [])
+
     return (
-        <Container style={{backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px'}}>
-            <PageHeadings heading={'structure'} />
+        <Container style={{ backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px' }}>
+            <Breadcrumbs forbread={0} />
             <Container>
                 <Table responsive>
                     <thead>
