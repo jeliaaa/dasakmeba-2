@@ -1,29 +1,41 @@
 @import 'variables.scss';
-
+.site_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#ebedff ;
+    padding-bottom: 50px;
+    justify-content: center;
+}
+@media screen and (min-width: 2000px) {
+    .site_container{
+        width: 75vw;
+        .app_wrapper{
+            width: 90%;
+            padding: 50px 0;
+        }
+    }
+    footer{
+        width: 75vw !important;
+    }
+    .nav_wrapper{
+        width: 70vw !important;
+    }
+}
 .app_wrapper {
-    width: 100vw;
-    padding: 50px 100px;
-    min-height: 55vh;
+    width: 80vw;
+    padding: 50px 0px;
 }
 
 .videos_wrapper {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap:40px ;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-}
-
-@media screen and (min-width: 1200px) {
-    .app_wrapper {
-        width: 75vw;
-    }
-
-    .videos_wrapper {
-        width: 75vw;
-    }
 }
 
 @media screen and (max-width: 700px) {

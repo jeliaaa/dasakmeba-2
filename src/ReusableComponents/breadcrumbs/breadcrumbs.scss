@@ -1,9 +1,4 @@
 @import '../../variables';
-.nav-crumb{
-    text-decoration: underline;
-    color: $primary-color-blue !important;
-    cursor: pointer;
-}
 @media screen and (max-width: 490px) {
     ol{
         display: flex;
@@ -11,6 +6,7 @@
         align-items: center;
     }
 }
-.fade{
-    z-index: 1300;
+a{
+    color: $primary-color-blue;
+    text-decoration: none;
 }

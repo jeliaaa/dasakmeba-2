@@ -2,15 +2,16 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import MenuOfNav from "./components/navbar/MenuOfNav";
 import MainPage from "./pages/mainPage/MainPage";
-import BaseInfo from "./pages/About/agency/baseInfo/BaseInfo";
-import Grants from "./pages/ourServices/services/grants/Grants";
+import BaseInfo from "./pages/about/baseInfo/BaseInfo";
+import Grants from "./pages/ourServices/grants/Grants";
 import Footer from "./components/footer/Footer";
 import { useTranslation } from "react-i18next";
-import Structure from "./pages/About/agency/structure/Structure";
-import WorkerSingle from "./pages/About/agency/structure/WorkerSingle";
+import Structure from "./pages/structure/Structure";
+import WorkerSingle from "./pages/structure/WorkerSingle";
 import Videos from "./ReusableComponents/vids/Videos";
 import { useEffect, useState } from "react";
 import Stats from "./ReusableComponents/stats/Stats";
+import About from "./pages/about/About";
 
 function App() {
   const { i18n } = useTranslation();
@@ -23,7 +24,7 @@ function App() {
   const location = useLocation();
   useEffect(() => {
     console.log(location.search);
-    if (location.pathname === "/dasakmeba-1") {
+    if (location.pathname === "/main") {
       setIsOpen(true);
     } else {
       setIsOpen(false);
@@ -31,23 +32,14 @@ function App() {
   }, [location]);
 
   return (
-    <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
+    <div style={{ fontFamily: `${fontPrimary}, sans-serif`, display:'flex', alignItems: 'center', flexDirection:'column' }}>
       <MenuOfNav />
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          backgroundColor: "#ebedff",
-          paddingBottom: "50px",
-          justifyContent: "center",
-        }}
-      >
+      <div className="site_container">
         <div className="app_wrapper">
           <Routes>
-            <Route index path="/dasakmeba-1" element={<MainPage />} />
-            <Route path="/about/agency/baseInfo" element={<BaseInfo />} />
+            <Route index path="/main" element={<MainPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/about/baseInfo" element={<BaseInfo />} />
             <Route path="/about/agency/structure" element={<Structure />} />
             <Route path="/ourServices/services/grants" element={<Grants />} />
             <Route

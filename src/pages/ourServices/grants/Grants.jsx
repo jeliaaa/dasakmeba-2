@@ -1,5 +1,5 @@
 import React from 'react'
-import Breadcrumbs from '../../../../ReusableComponents/breadcrumbs/Breadcrumbs'
+import Breadcrumbs from '../../../ReusableComponents/breadcrumbs/Breadcrumbs'
 
 const Grants = () => {
   return (
