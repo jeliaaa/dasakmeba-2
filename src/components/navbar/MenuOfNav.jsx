@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Brand from '../../assets/logo.png'
 import { Link } from 'react-router-dom';
 import './Navbar.scss'
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MenuIcon from '@mui/icons-material/MenuBook';
 import { useScroll } from '../../scrollContext';
-import { Dropdown, Menu, MenuButton, MenuItem } from '@mui/base';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
 const MenuOfNav = (props) => {
@@ -44,10 +40,6 @@ const MenuOfNav = (props) => {
     const isFixed = scrollPosition >= 150;
     const drawer = (
         <div className='nav-side'>
-            <Toolbar>
-                <Typography>{t('menu')}</Typography>
-            </Toolbar>
-            <Divider />
             <List>
                 <Accordion className='accord'>
                     <AccordionSummary
@@ -59,41 +51,11 @@ const MenuOfNav = (props) => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <div>
-                            <List id='agency'>
-                                <h6>{t('agency')}</h6>
-                                <Divider />
-                                <ListItem><Link to={'/about/agency/baseInfo'}>{t('baseInfo')}</Link></ListItem>
-                                <ListItem><Link to={'/about/agency/brand'}>{t('brand')}</Link></ListItem>
-                                <ListItem><Link to={'/about/agency/structure'}>{t('structure')}</Link></ListItem>
-                            </List>
                             <List>
-                                <h6>{t('gallery')}</h6>
-                                <Divider></Divider>
-                                <ListItem><Link to={'/about/gallery/photoGallery'}>{t('photoGallery')}</Link></ListItem>
-                                <ListItem><Link to={'/about/gallery/videoGallery'}>{t('videoGallery')}</Link></ListItem>
-                            </List>
-                            <List>
-                                <h6>{t('news')}</h6>
-                                <Divider></Divider>
-                                <ListItem><Link to={'/about/news/news'}>{t('news')}</Link></ListItem>
-                            </List>
-                            <List>
-                                <h6>{t('partners')}</h6>
-                                <Divider></Divider>
-                                <ListItem><Link to={'/about/partners/internationally'}>{t('internationally')}</Link></ListItem>
-                                <ListItem><Link to={'/about/partners/ourPartners'}>{t('ourPartners')}</Link></ListItem>
-                            </List>
-                            <List>
-                                <h6>{t('projects')}</h6>
-                                <Divider></Divider>
-                                <ListItem><Link to={'/about/projects/projects'}>{t('projects')}</Link></ListItem>
-                            </List>
-                            <List>
-                                <h6>{t('stats')}</h6>
-                                <Divider></Divider>
-                                <ListItem><Link to={'/about/stats/data'}>{t('data')}</Link></ListItem>
-                                <ListItem><Link to={'/about/stats/brandStats'}>{t('brandStats')}</Link></ListItem>
-                                <ListItem><Link to={'/about/stats/researches'}>{t('researches')}</Link></ListItem>
+                                <ListItem><Link to={'/about/agency/structure'}>{t('baseInfo')}</Link></ListItem>
+                                <ListItem><Link to={'/about/partners'}>{t('partners')}</Link></ListItem>
+                                <ListItem><Link to={'/about/structure'}>{t('structure')}</Link></ListItem>
+                                <ListItem><Link to={'/about/statistics'}>{t('stats')}</Link></ListItem>
                             </List>
                         </div>
                     </AccordionDetails>
@@ -104,29 +66,34 @@ const MenuOfNav = (props) => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography>{t('ourServices')}</Typography>
+                        <Typography>{t('services')}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <List>
-                            <h6>{t('detailedServices')}</h6>
-                            <Divider></Divider>
-                            <ListItem><Link to={'/ourServices/ourServices/hrServices'}>{t('hrServices')}</Link></ListItem>
-                            <ListItem><Link to={'/ourServices/ourServices/seekerServices'}>{t('seekerServices')}</Link></ListItem>
+                            <ListItem><Link to={'/services/projects'}>{t('projects')}</Link></ListItem>
+                            <ListItem><Link to={'/services/aboutServices'}>{t('aboutServices')}</Link></ListItem>
+                            <ListItem><Link to={'/services/grants'}>{t('grants')}</Link></ListItem>
+                            <ListItem><Link to={'/services/migration'}>{t('migration')}</Link></ListItem>
                         </List>
 
-
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className='accord'>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>{t('blog')}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <List>
-                            <h6>{t('services')}</h6>
-                            <Divider></Divider>
-                            <ListItem><Link to={'/ourServices/services/organisations'}>{t('organisations')}</Link></ListItem>
-                            <ListItem><Link to={'/ourServices/services/jobSeekers'}>{t('jobSeekers')}</Link></ListItem>
-                            <ListItem><Link to={'/ourServices/services/grants'}>{t('grants')}</Link></ListItem>
-                        </List>
-                        <List>
-                            <h6>{t('jobsAbroad')}</h6>
-                            <Divider></Divider>
-                            <ListItem><Link to={'/ourServices/jobsAbroad/migration'}>{t('migration')}</Link></ListItem>
-                            <ListItem><Link to={'/ourServices/jobsAbroad/workAbroad'}>{t('workAbroad')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/articles'}>{t('articles')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/lessons'}>{t('lessons')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/profesiograma'}>{t('profesiograma')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/classification'}>{t('classification')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/calendar'}>{t('calendar')}</Link></ListItem>
+                            <ListItem><Link to={'/blog/researches'}>{t('researches')}</Link></ListItem>
                         </List>
                     </AccordionDetails>
                 </Accordion>
@@ -136,51 +103,47 @@ const MenuOfNav = (props) => {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <Typography>{t('career')}</Typography>
+                        <Typography>{t('media')}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <List>
-                            <h6>{t('blog')}</h6>
-                            <Divider></Divider>
-                            <ListItem><Link to={'/career/blog/articles'}>{t('articles')}</Link></ListItem>
-                            <ListItem><Link to={'/career/blog/lessons'}>{t('lessons')}</Link></ListItem>
-                            <ListItem><Link to={'/career/blog/elbooks'}>{t('elbooks')}</Link></ListItem>
-                            <ListItem><Link to={'/career/blog/career'}>{t('career')}</Link></ListItem>
+                            <ListItem><Link to={'/media/news'}>{t('news')}</Link></ListItem>
+                            <ListItem><Link to={'/media/gallery'}>{t('gallery')}</Link></ListItem>
                         </List>
+
+                    </AccordionDetails>
+                </Accordion>
+                <Accordion className='accord'>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>{t('vacancy')}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
                         <List>
-                            <h6>{t('profAtlas')}</h6>
-                            <Divider></Divider>
-                            <ListItem><Link to={'/career/profAtlas/profesiograma'}>{t('profesiograma')}</Link></ListItem>
-                            <ListItem><Link to={'/career/profAtlas/advices'}>{t('advices')}</Link></ListItem>
-                            <ListItem><Link to={'/career/profAtlas/classification'}>{t('classification')}</Link></ListItem>
-                            <ListItem><Link to={'/career/profAtlas/calendar'}>{t('calendar')}</Link></ListItem>
+                            <ListItem><Link to={'/vacancy/employement'}>{t('employement')}</Link></ListItem>
+                            <ListItem><Link to={'/vacancy/internship'}>{t('internship')}</Link></ListItem>
+                            <ListItem><Link to={'/vacancy/volunteering'}>{t('volunteering')}</Link></ListItem>
+                            <ListItem><Link to={'/vacancy/familyWork'}>{t('familyWork')}</Link></ListItem>
                         </List>
                     </AccordionDetails>
-                    <Accordion className='accord'>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                        >
-                            <Typography>{t('guide')}</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <List>
-                                <ListItem><Link to={'/guide/guide'}>{t('guide')}</Link></ListItem>
-                                <ListItem><Link to={'/guide/structure'}>{t('structure')}</Link></ListItem>
-                                <ListItem><Link to={'/guide/qA'}>{t('qA')}</Link></ListItem>
-                            </List>
-
-                        </AccordionDetails>
-                    </Accordion>
                 </Accordion>
-            </List>
-            <List>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemText>{t('contacts')}</ListItemText>
-                    </ListItemButton>
-                </ListItem>
+                <Accordion className='accord'>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <Typography>{t('qA')}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <List>
+                            <ListItem><Link to={'/qA/guide'}>{t('guide')}</Link></ListItem>
+                        </List>
+                    </AccordionDetails>
+                </Accordion>
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemText>{t('pubInfo')}</ListItemText>
@@ -216,7 +179,7 @@ const MenuOfNav = (props) => {
                 sx={{
                     md: { display: 'none' },
                     display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' },
-                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '70vh', borderRadius: '15px', marginTop: '0px', position: 'fixed', scrollbarWidth: '16px' },
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '20vw', marginLeft: '50px', height: '50vh', borderRadius: '15px', marginTop: '0px', position: 'fixed', scrollbarWidth: '16px' },
                 }}
                 open
             >
@@ -249,11 +212,18 @@ const MenuOfNav = (props) => {
                 <Navbar.Brand className='brand'>
                     <Link to={'/dasakmeba-1'}  >
                         <img src={Brand} alt='logo' />
-                        <span>აჭარის დასაქმების სააგენტო</span>
                     </Link>
                 </Navbar.Brand>
+                <span className='poor_sight'>
+                    <i className='fa-solid fa-eye'></i>
+                    <span>{t('versionForBlind')}</span>
+                </span>
+                <div className='search'>
+                    <input type="text" placeholder='&#9740;'/>
+                </div>
                 <section>
                     <div className="sign_up" style={{ display: "flex" }}>
+
                         <Button variant="primary" onClick={() => setShow(true)}>
                             Sign in
                         </Button>
@@ -289,7 +259,7 @@ const MenuOfNav = (props) => {
                                             <Form.Control type="password" placeholder="Password" />
                                         </Col>
                                     </Form.Group>
-                                <Link to={'/register'} className='text-center '>Register</Link>
+                                    <Link to={'/register'} className='text-center '>Register</Link>
                                 </Form>
                             </Modal.Body>
                         </Modal>

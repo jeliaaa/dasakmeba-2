@@ -1,6 +1,7 @@
+@import '../../variables';
 .nav-crumb{
     text-decoration: underline;
-    color: blue !important;
+    color: $primary-color-blue !important;
     cursor: pointer;
 }
 @media screen and (max-width: 490px) {

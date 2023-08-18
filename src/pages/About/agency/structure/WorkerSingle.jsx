@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Accordion, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../../../../ReusableComponents/breadcrumbs/Breadcrumbs';
-import PageHeadings from '../../../../ReusableComponents/pages_headings/PageHeadings';
 import { useTranslation } from 'react-i18next';
 
 const WorkerSingle = () => {
@@ -14,12 +13,10 @@ const WorkerSingle = () => {
             .then((res) => res.json())
             .then((data) => setWorker(data))
             .catch(err => console.error(err))
-    }, [])
+    })
     return (
         <Container style={{backgroundColor: '#fff', padding: '20px 20px', borderRadius: '8px'}}>
-            <PageHeadings heading={'structure'}>
-                <Breadcrumbs forbread={'agency'} />
-            </PageHeadings>
+                <Breadcrumbs forbread={1} />
             <Container className='p-4'>
                 <div className='worker_card'>
                     <img src='https://placehold.co/400' alt='...' />

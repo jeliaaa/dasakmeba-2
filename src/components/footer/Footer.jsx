@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="col-md-4 socials">
                 {socials.map((social) => (
                     <Link key={social.id} to={social.link}>
-                        <i className={`fa-brands fa-${social.name} fa-2xl `} style={{color:'black'}}></i>
+                        <i className={`fa-brands fa-${social.name} fa-2xl `}></i>
                     </Link>
 
                 ))}

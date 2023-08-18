@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.scss";
 import MenuOfNav from "./components/navbar/MenuOfNav";
 import MainPage from "./pages/mainPage/MainPage";
@@ -8,15 +8,27 @@ import Footer from "./components/footer/Footer";
 import { useTranslation } from "react-i18next";
 import Structure from "./pages/About/agency/structure/Structure";
 import WorkerSingle from "./pages/About/agency/structure/WorkerSingle";
+import Videos from "./ReusableComponents/vids/Videos";
+import { useEffect, useState } from "react";
+import Stats from "./ReusableComponents/stats/Stats";
 
 function App() {
   const { i18n } = useTranslation();
   const selectedLanguage = i18n.language;
-
   let fontPrimary = "--font-primary-ge"; // Default font
   if (selectedLanguage === "en") {
     fontPrimary = "--font-primary-en";
   }
+  const [isOpen, setIsOpen] = useState(true);
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location.search);
+    if (location.pathname === "/dasakmeba-1") {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [location]);
 
   return (
     <div style={{ fontFamily: `${fontPrimary}, sans-serif` }}>
@@ -25,8 +37,11 @@ function App() {
         style={{
           width: "100%",
           display: "flex",
-          justifyContent: "flex-end",
+          flexDirection: "column",
+          alignItems: "flex-end",
           backgroundColor: "#ebedff",
+          paddingBottom: "50px",
+          justifyContent: "center",
         }}
       >
         <div className="app_wrapper">
@@ -41,6 +56,15 @@ function App() {
             />
           </Routes>
         </div>
+        <div className="videos_wrapper">
+          {isOpen && (
+            <>
+              <Videos /> <Stats />
+            </>
+          )}
+        </div>
+        <>
+        </>
       </div>
 
       <Footer />
