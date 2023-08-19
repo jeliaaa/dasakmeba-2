@@ -3,7 +3,7 @@ import { Container, Table } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import './worker.scss'
-import Breadcrumbs from '../../ReusableComponents/breadcrumbs/Breadcrumbs'
+import Breadcrumbs from '../../../ReusableComponents/breadcrumbs/Breadcrumbs'
 
 const Structure = () => {
     const { t } = useTranslation();

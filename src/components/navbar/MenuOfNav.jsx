@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Brand from '../../assets/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss'
 import { useTranslation } from 'react-i18next';
 import Drawer from '@mui/material/Drawer';
@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Button, Col, Form, Modal, Nav, Row } from 'react-bootstrap';
-
 const MenuOfNav = (props) => {
     const { t, i18n } = useTranslation();
     const [val, setVal] = useState('');
@@ -18,6 +17,7 @@ const MenuOfNav = (props) => {
         i18n.changeLanguage(e.target.value);
         setVal(e.target.value)
     };
+    const location = useLocation();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const handleDrawerToggle = () => {
@@ -37,6 +37,9 @@ const MenuOfNav = (props) => {
         navLinks.forEach((navlink) => {
             navlink.current.classList.remove('active')
         })
+    }
+    if(location.pathname === '/main'){
+        handleMain()
     }
     const handleChange = (e) => {
         navLinks.forEach((navlink) => {
@@ -59,8 +62,6 @@ const MenuOfNav = (props) => {
         </div>
     );
     const container = window !== undefined ? () => window().document.body : undefined;
-
-
     return (
         <div className='nav_wrapper' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Drawer
@@ -104,11 +105,9 @@ const MenuOfNav = (props) => {
                 </div>
                 <section>
                     <div className="sign_up" style={{ display: "flex" }}>
-
                         <Button variant="primary" onClick={() => setShow(true)}>
                             Sign in
                         </Button>
-
                         <Modal
                             show={show}
                             onHide={() => setShow(false)}
@@ -131,7 +130,6 @@ const MenuOfNav = (props) => {
                                             <Form.Control type='email' placeholder='Email' />
                                         </Col>
                                     </Form.Group>
-
                                     <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                                         <Form.Label column sm="2">
                                             Password
@@ -145,23 +143,21 @@ const MenuOfNav = (props) => {
                             </Modal.Body>
                         </Modal>
                     </div>
-
                     <select value={val} onChange={changeLanguage} className='lang_change'>
                         <option value="ge">GE</option>
                         <option value="en">EN</option>
                     </select>
                 </section>
-
             </div>
             <Nav justify variant="tabs" className='col-md-8'>
                 <Nav.Item>
                     <Link ref={navLink1} className='nav-link' onClick={handleChange} to={'/about'}>{t('about')}</Link>
                 </Nav.Item>
                 <Nav.Item >
-                    <Link ref={navLink2} onClick={handleChange} className='nav-link' to={'/about/agency/structure'}>{t('services')}</Link>
+                    <Link ref={navLink2} onClick={handleChange} className='nav-link' to={'/services'}>{t('services')}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link ref={navLink3} onClick={handleChange} className='nav-link' to={'/about/agency/structure'}>{t('blog')}</Link>
+                    <Link ref={navLink3} onClick={handleChange} className='nav-link' to={'/blog'}>{t('blog')}</Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Link ref={navLink4} onClick={handleChange} className='nav-link' to={'/about/agency/structure'} ac>{t('media')}</Link>
@@ -177,7 +173,6 @@ const MenuOfNav = (props) => {
                 </Nav.Item>
             </Nav>
         </div>
-
     )
 }
 export default MenuOfNav;
