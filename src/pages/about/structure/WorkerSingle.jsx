@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Accordion, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import Breadcrumbs from '../../ReusableComponents/breadcrumbs/Breadcrumbs';
+import Breadcrumbs from '../../../ReusableComponents/breadcrumbs/Breadcrumbs';
 import { useTranslation } from 'react-i18next';
 
 const WorkerSingle = () => {

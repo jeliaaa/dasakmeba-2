@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Navbar from 'react-bootstrap/Navbar';
 import Brand from '../../assets/logo.png'
 import { Link, useLocation } from 'react-router-dom';
@@ -33,14 +33,33 @@ const MenuOfNav = (props) => {
     const navLinks = [
         navLink1, navLink2, navLink3, navLink4, navLink5, navLink6, navLink7
     ]
-    const handleMain = () =>{
+    const handleMain = () => {
         navLinks.forEach((navlink) => {
             navlink.current.classList.remove('active')
         })
     }
-    if(location.pathname === '/main'){
-        handleMain()
-    }
+    useEffect(() => {
+        if (location.pathname === '/main') {
+            handleMain()
+        }
+    }, [ location, handleMain ])
+    useEffect(() => {
+        if(location.pathname === '/about'){
+            navLink1.current.classList.add('active')
+        } else if(location.pathname === '/services'){
+            navLink2.current.classList.add('active')
+        }else if(location.pathname === '/blog'){
+            navLink3.current.classList.add('active')
+        }else if(location.pathname === '/media'){
+            navLink4.current.classList.add('active')
+        }else if(location.pathname === '/vacancy'){
+            navLink5.current.classList.add('active')
+        }else if(location.pathname === '/qA'){
+            navLink6.current.classList.add('active')
+        }else if(location.pathname === '/pubInfo'){
+            navLink7.current.classList.add('active')
+        }
+    }, [])
     const handleChange = (e) => {
         navLinks.forEach((navlink) => {
             navlink.current.classList.remove('active')
@@ -50,15 +69,15 @@ const MenuOfNav = (props) => {
     const drawerWidth = 300;
     const drawer = (
         <div className='nav-side'>
-                <List>
-                    <ListItem><Link to={'/about'}>{t('about')}</Link></ListItem>
-                    <ListItem><Link to={'/services'}>{t('services')}</Link></ListItem>
-                    <ListItem><Link to={'/blog'}>{t('blog')}</Link></ListItem>
-                    <ListItem><Link to={'/media'}>{t('media')}</Link></ListItem>
-                    <ListItem><Link to={'/vacancy'}>{t('vacancy')}</Link></ListItem>
-                    <ListItem><Link to={'/qA'}>{t('qA')}</Link></ListItem>
-                    <ListItem><Link to={'/pubInfo'}>{t('pubInfo')}</Link></ListItem>
-                </List>
+            <List>
+                <ListItem><Link to={'/about'}>{t('about')}</Link></ListItem>
+                <ListItem><Link to={'/services'}>{t('services')}</Link></ListItem>
+                <ListItem><Link to={'/blog'}>{t('blog')}</Link></ListItem>
+                <ListItem><Link to={'/media'}>{t('media')}</Link></ListItem>
+                <ListItem><Link to={'/vacancy'}>{t('vacancy')}</Link></ListItem>
+                <ListItem><Link to={'/qA'}>{t('qA')}</Link></ListItem>
+                <ListItem><Link to={'/pubInfo'}>{t('pubInfo')}</Link></ListItem>
+            </List>
         </div>
     );
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -160,16 +179,16 @@ const MenuOfNav = (props) => {
                     <Link ref={navLink3} onClick={handleChange} className='nav-link' to={'/blog'}>{t('blog')}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link ref={navLink4} onClick={handleChange} className='nav-link' to={'/about/agency/structure'} ac>{t('media')}</Link>
+                    <Link ref={navLink4} onClick={handleChange} className='nav-link' to={'/media'} ac>{t('media')}</Link>
                 </Nav.Item>
                 <Nav.Item >
-                    <Link ref={navLink5} onClick={handleChange} className='nav-link' to={'/about/agency/structure'}>{t('vacancy')}</Link>
+                    <Link ref={navLink5} onClick={handleChange} className='nav-link' to={'/vacancy'}>{t('vacancy')}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link ref={navLink6} onClick={handleChange} className='nav-link' to={'/about/agency/structure'}>{t('qA')}</Link>
+                    <Link ref={navLink6} onClick={handleChange} className='nav-link' to={'/qA'}>{t('qA')}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link ref={navLink7} onClick={handleChange} className='nav-link' to={'/about/agency/structure'}>{t('pubInfo')}</Link>
+                    <Link ref={navLink7} onClick={handleChange} className='nav-link' to={'/pubInfo'}>{t('pubInfo')}</Link>
                 </Nav.Item>
             </Nav>
         </div>

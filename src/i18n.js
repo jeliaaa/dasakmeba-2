@@ -40,6 +40,10 @@ const resources = {
       qA: "Q&A",
       contacts: "Contact us",
       pubInfo: "Public info",
+      conference: 'Conference',
+      lectures: 'Lectures',
+      professional: 'Professional knowledge',
+      trainings: 'Trainings',
       //mainpage
       companies: "Companies",
       seekers: "Seekers",
@@ -92,6 +96,10 @@ const resources = {
       qA: "კითხვა-პასუხი",
       contacts: "კონტაქტები",
       pubInfo: "საჯარო ინფორმაცია",
+      conference: 'კონფერენცია',
+      lectures: 'სემინარები',
+      professional: 'პროფესიული სასწავლებელი',
+      trainings: 'ტრენინგები',
       //mainpage
       companies: "კომპანია",
       seekers: "მაძიებელი",
