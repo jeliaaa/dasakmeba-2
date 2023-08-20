@@ -4,9 +4,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#ebedff ;
+    background-color:#ebedffad ;
+
+    // background: rgb(8,8,113);
+    // background: linear-gradient(0deg, rgba(8,8,113,0) 0%, rgba(0,159,255,0.4290091036414566) 100%);
+
+    border-radius: 25px;
     padding-bottom: 50px;
     justify-content: center;
+    min-height: 100vh;
 }
 @media screen and (min-width: 2000px) {
     .site_container{
@@ -14,10 +20,12 @@
         .app_wrapper{
             width: 90%;
             padding: 50px 0;
+
         }
     }
     footer{
-        width: 75vw !important;
+        // footeris background sul unda avsebdes ekrans, shida elementebia shignit shesawevei
+        //width: 75vw !important;
     }
     .nav_wrapper{
         width: 70vw !important;

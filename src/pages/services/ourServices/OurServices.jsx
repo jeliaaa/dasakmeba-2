@@ -1,8 +1,15 @@
 import React from 'react'
+import NavBox from '../../../ReusableComponents/navbox/NavBox'
+import { useTranslation } from 'react-i18next'
 
 const OurServices = () => {
+  const {t} = useTranslation();
   return (
-    <div>OurServices</div>
+    <div className='services_wrapper' style={{display:'flex', justifyContent:'center', gap:'20px', flexWrap:'wrap'}}>
+        <NavBox name={t('forOrg')} to={'/services/ourServices/forOrgs/forOrgs.jsx'} />
+        <NavBox name={t('forUsers')} to={'/services/ourServices/forUsers'} />
+
+      </div>
   )
 }
 
