@@ -10,5 +10,3 @@ const NavBox = ({ name, to }) => {
         </div>
     )
 }
-
-export default React.memo(NavBox)
