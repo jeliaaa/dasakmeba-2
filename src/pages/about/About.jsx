@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import './aboutAlignment.scss'
 import NavBox from '../../ReusableComponents/navbox/NavBox';
 const About = () => {
   const {t} = useTranslation();
