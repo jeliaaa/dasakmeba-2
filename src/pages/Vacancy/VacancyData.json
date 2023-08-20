@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "Position": "მიმტანი",
+        "Location": "ბათუმი",
+        "Salary": "1300",
+        "Shift": "სრული",
+        "type" : 1,
+        "parent": "კონფერენცია",
+        "industries" : {
+            "industry1": {
+                "quantity": 1000,
+                "name": "ინდუსტრია1",
+                "vacancy" : "ვაკანსია 1",
+                "vacancy2" : "ვაკანსია 2"
+            },
+            "industry2": {
+                "quantity": 4000,
+                "name": "ინდუსტრია2",
+                "vacancy" : "ვაკანსია 10",
+                "vacancy2" : "ვაკანსია 20"
+            },
+            "industry3": {
+                "quantity": 5000,
+                "name": "ინდუსტრია3",
+                "vacancy" : "ვაკანსია 100",
+                "vacancy2" : "ვაკანსია 200"
+            }
+        }
+    },
+    {
+        "id": 3,
+        "Position": "დამლაგებელი",
+        "Location": "ბათუმი",
+        "Salary": "2000",
+        "Shift": "სრული",
+        "type" : 2,
+        "parent": "დასაქმება",
+        "industries" : {
+            "industry1": {
+                "quantity" : 300,
+                "name": "ინდუსტრია1",
+                "vacancy" : "ვაკანსია 1",
+                "vacancy2" : "ვაკანსია 2"
+            },
+            "industry2": {
+                "quantity" : 100,
+                "name": "ინდუსტრია2",
+                "vacancy" : "ვაკანსია 101",
+                "vacancy2" : "ვაკანსია 202"
+            }
+        }
+    },
+    {
+        "id": 4,
+        "Position": "ბარმენი",
+        "Location": "ბათუმი",
+        "Salary": "25000",
+        "Shift": "ნახევარი",
+        "type" : 3,
+        "parent": "ოჯახში დასაქმება",
+        "industries" : {
+            "industry1": {
+                "name": "ინდუსტრია1",
+                "quantity" : 300,
+                "vacancy" : "ვაკანსია 1",
+                "vacancy2" : "ვაკანსია 2",
+                "vacancy3" : "ვაკანსია 20",
+                "vacancy4" : "ვაკანსია 2004"
+            }
+        }
+    },
+    {
+        "id": 5,
+        "Position": "მასწავლებელი",
+        "Location": "ჩაქვი",
+        "Salary": "25000",
+        "Shift": "ნახევარი",
+        "type" : 4,
+        "parent": "სტაჟირება",
+        "industries" : {
+            "industry1": {
+                "name": "ინდუსტრია1",
+                "quantity" : 3000,
+                "vacancy" : "ვაკანსია 1",
+                "vacancy2" : "ვაკანსია 2",
+                "vacancy3" : "ვაკანსია 20",
+                "vacancy4" : "ვაკანსია 2004"
+            }
+        }
+    },
+    {
+        "id": 6,
+        "Position": "სპაიდერმენი",
+        "Location": "ჩაქვი",
+        "Salary": "25000",
+        "Shift": "ნახევარი",
+        "type" : 5,
+        "parent": "საგანმანათლებლო",
+        "industries" : {
+            "industry1": {
+                "quantity": 10,
+                "name": "ინდუსტრია1",
+                "vacancy" : "ვაკანსია 1",
+                "vacancy2" : "ვაკანსია 2",
+                "vacancy3" : "ვაკანსია 20",
+                "vacancy4" : "ვაკანსია 2004"
+            }
+        }
+    }
+]
