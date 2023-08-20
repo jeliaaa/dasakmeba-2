@@ -1,9 +1,9 @@
 import React from 'react'
 
-const forOrgs = () => {
+const ForOrgs = () => {
   return (
     <div>Orgs</div>
   )
 }
 
-export default forOrgs
+export default ForOrgs

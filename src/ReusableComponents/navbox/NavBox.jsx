@@ -4,8 +4,8 @@ import './navbox.scss'
 const NavBox = ({ name, to }) => {
     return (
         <div className="nav-box">
+            <div className='font-face-gm'>
             <Link to={to}><h3>{name}</h3></Link>
-            <h3>{name}</h3>
         </div>
     )
 }
