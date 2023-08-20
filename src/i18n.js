@@ -80,6 +80,8 @@ const resources = {
       grants: "გრანტები და პროგრამები",
       migration: "მიგრაცია",
       blog: "ბლოგი",
+      forOrg: "ორგანიზაციებს",
+      forUsers: "მაძიებელს",
       articles: "სტატიები",
       lessons: "გაკვეთილები",
       profesiograma: "პროფესიოგრამა",

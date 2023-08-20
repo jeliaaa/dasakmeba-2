@@ -5,6 +5,7 @@ footer {
     background-color: $primary-color-blue;
     padding: 50px;
     width: 100%;
+
     .rights {
         text-align: center;
         display: flex;
@@ -13,7 +14,6 @@ footer {
         flex-direction: column;
         color: $primary-color-gray;
     }
-
     .socials {
         -webkit-column-gap: 50px;
         -moz-column-gap: 50px;

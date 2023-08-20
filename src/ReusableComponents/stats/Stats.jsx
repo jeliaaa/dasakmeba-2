@@ -14,11 +14,11 @@ const Stats = () => {
                 delay: 2500,
                 disableOnInteraction: false,
             }}
-            slidesPerView={1}
-            spaceBetween={30}
+            slidesPerView={4}
+            spaceBetween={100}
             className="owl"
         >
-            {[1, 2].map((item) => (
+            {[1, 2, 3, 4].map((item) => (
                 <SwiperSlide key={item}>
                     <h1>12020</h1>
                     <h3>MEN</h3>
