@@ -16,6 +16,8 @@ import WorkerSingle from './pages/about/structure/WorkerSingle'
 import Statistics from "./pages/about/statistics/Statistics";
 import Services from "./pages/services/Services";
 import OurServices from "./pages/services/ourServices/OurServices";
+import ForOrgs from "./pages/services/ourServices/forOrgs/ForOrgs";
+import ForUsers from "./pages/services/ourServices/forUsers/ForUsers";
 import Migration from "./pages/services/migration/Migration";
 import Grants from "./pages/services/grants/Grants";
 import Projects from "./pages/services/projects/Projects";
@@ -41,6 +43,8 @@ import Volunteering from './pages/vacancy/volunteering/Volunteering'
 import QnA from "./pages/QnA/QnA";
 import Guide from './pages/QnA/Guide/Guide'
 import PublicInformation from './pages/publicInfromation/PublicInformation'
+
+
 
 function App() {
   const { i18n } = useTranslation();
@@ -88,6 +92,8 @@ function App() {
             <Route path="/services/grants" element={<Grants />} />
             <Route path="/services/projects" element={<Projects />} />
             <Route path="/services/migration" element={<Migration />} />
+            <Route path="services/ourServices/forOrgs" element={<ForOrgs />} />
+            <Route path="services/ourServices/forUsers" element={<ForUsers />} />
             {/* blog */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/articles" element={<Articles />} />
@@ -133,3 +139,4 @@ function App() {
 }
 
 export default App;
+ 

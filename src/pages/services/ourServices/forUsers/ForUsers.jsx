@@ -1,9 +1,9 @@
 import React from 'react'
 
-const forUsers = () => {
+const ForUsers = () => {
   return (
     <div>Users</div>
   )
 }
 
-export default forUsers
+export default ForUsers
