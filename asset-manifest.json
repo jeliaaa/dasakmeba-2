@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/dasakmeba-2/static/css/main.7e4ca6c4.css",
+    "main.js": "/dasakmeba-2/static/js/main.38e7d21b.js",
+    "static/js/787.e2381b9f.chunk.js": "/dasakmeba-2/static/js/787.e2381b9f.chunk.js",
+    "static/media/logo.png": "/dasakmeba-2/static/media/logo.4b1fb2dd5f9b98be7bd9.png",
+    "index.html": "/dasakmeba-2/index.html",
+    "main.7e4ca6c4.css.map": "/dasakmeba-2/static/css/main.7e4ca6c4.css.map",
+    "main.38e7d21b.js.map": "/dasakmeba-2/static/js/main.38e7d21b.js.map",
+    "787.e2381b9f.chunk.js.map": "/dasakmeba-2/static/js/787.e2381b9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e4ca6c4.css",
+    "static/js/main.38e7d21b.js"
+  ]
+}
