@@ -9,7 +9,6 @@ const NavBox = ({ name, to }) => {
                 <Link to={to}><h3>{name}</h3></Link>
             </div>
         </div>
-        </div>
     )
 }
 
