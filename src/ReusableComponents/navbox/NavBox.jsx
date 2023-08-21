@@ -6,12 +6,11 @@ const NavBox = ({ name, to }) => {
     return (
         <div className="nav-box">
             <div className='font-face-gm'>
-            <Link to={to}><h3>{name}</h3></Link>
+                <Link to={to}><h3>{name}</h3></Link>
+            </div>
         </div>
         </div>
     )
 }
 
 export default React.memo(NavBox)
-
-

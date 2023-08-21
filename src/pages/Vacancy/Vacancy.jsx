@@ -135,12 +135,11 @@ const Vacancy = () => {
             </div>
             <div className='filter_bottom'>
                 {filteredVacancies.map((vacancy) => (
-
                     vacancy.industries && (
                         Object.keys(vacancy.industries).map((industryKey) => (
-                            <FormControl className='vacancy_filter' component={'fieldset'}>
+                            <FormControl className='vacancy_filter' component={'fieldset'} key={industryKey}>
                                 <p>{vacancy.parent}</p>
-                                <p>{vacancy.industries[industryKey].quantity}</p>
+                                <p className='quantity'>{vacancy.industries[industryKey].quantity}</p>
                                 <FormControlLabel
                                     value={vacancy.industries[industryKey].name}
                                     control={<Checkbox sx={{
@@ -151,12 +150,10 @@ const Vacancy = () => {
                                     }} onClick={() => { handleClick(8) }} />}
                                     label={vacancy.industries[industryKey].name}
                                     labelPlacement="start"
-
                                 />
                             </FormControl>
                         ))
                     )
-
                 ))}
             </div>
 
