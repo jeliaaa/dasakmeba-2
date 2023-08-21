@@ -10,3 +10,4 @@ const NavBox = ({ name, to }) => {
         </div>
     )
 }
+export default NavBox

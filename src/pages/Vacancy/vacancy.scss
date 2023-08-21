@@ -25,23 +25,33 @@
 }
 .filter_bottom{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     width: 100%;
-    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px 15px;
     height: 500px;
     flex-wrap: wrap;
     .vacancy_filter{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         margin: 10px;
         width: 40%;
-        background-color: greenyellow;
+        height: max-content;
+        background-color: $primary-color-gray;
+        .quantity{
+            width: fit-content !important;
+            background-color: #5f7adb;
+            border-radius: 15px;
+            padding: 5px 10px;
+            border: none;
+            color: $primary-color-gray;
+        }
         p{
-            width: 40%;
+            width: 50%;
         }
         label{
             width: 100%;
