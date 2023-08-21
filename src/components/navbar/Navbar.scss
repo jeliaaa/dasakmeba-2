@@ -1,51 +1,36 @@
-ul {
-    padding: 0;
-    border-radius: 8px;
-
-    .MuiPaper-root {
-        margin-top: 0%;
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px !important;
-
+@import "../../variables";
+@media screen and (max-width: 490px) {
+    .navBar {
+        padding: 15px 0px !important;
+        gap: 0px !important;
     }
-
-    li:hover {
-        background-color: rgb(184, 177, 177);
-    }
+}
+.nav_wrapper{
+    width: 100%;
 }
 .nav-side{
-    overflow-y: scroll;
-    &::-webkit-scrollbar-thumb {
-        background-color: blue;
-        border: 4px solid transparent;
-        border-radius: 8px;
-        background-clip: padding-box;
+    li{
+        padding: 0px;
+        a{
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: $primary-color-blue;
+            padding: 20px;
+        }
     }
-
-    &::-webkit-scrollbar {
-        width: 16px;
-    }
-}
-
-
-.MuiPaper-root {
-    margin-top: 0;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
-
-   
-}
-
-@media screen and (max-width: 1280px) {
-    .MuiPaper-root {
-        margin-top: 0;
-
+    li:hover{
+        background-color: $primary-color-gray;
     }
 }
-
 .navBar {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 15px 0;
+    justify-content: space-between;
+    padding: 15px 50px;
+    gap: 20px;
+
     .brand {
         a:hover {
             border: none;
@@ -62,6 +47,10 @@ ul {
 
     .sign_acc {
         display: none;
+    }
+
+    .MuiIconButton-colorInherit {
+        margin: 0 !important;
     }
 
     @media screen and (max-width: 680px) {
@@ -90,11 +79,80 @@ ul {
 
     }
 
+    .poor_sight {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        border-radius: 15px;
+        border: none;
+        background-color: $primary-color-gray;
+        padding: 0 8px;
+
+        i {
+            color: $primary-color-blue;
+        }
+
+        span {
+            color: $primary-color-blue;
+        }
+
+    }
+
+    @media screen and (max-width: 1100px) {
+        .poor_sight {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+            height: 30px;
+            width: 30px;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    .search {
+        display: flex;
+    }
+
+    input {
+        border: none;
+        width: 250px;
+        background-color: $primary-color-gray;
+        border-radius: 20px;
+        transform: rotate(180deg);
+    }
+
+    .search::after {
+        font-family: 'FontAwesome';
+        content: '\f002';
+        display: none;
+    }
+
+    @media screen and (max-width: 780px) {
+        input {
+            width: 150px;
+        }
+
+    }
+
+    @media screen and (max-width: 620px) {
+        input {
+            display: none;
+        }
+
+        .search::after {
+            display: block;
+        }
+    }
+
+
     section {
-        width: 50%;
         display: flex;
         justify-content: flex-end;
-        gap: 50px;
+        gap: 40px;
         align-items: center;
 
         .lang_change {
@@ -107,7 +165,7 @@ ul {
             button {
                 padding: 6px 10px;
                 border-radius: 5px;
-                background-color: blue;
+                background-color: $primary-color-blue;
                 color: white;
                 font-weight: bolder;
                 border: none;
@@ -120,15 +178,41 @@ ul {
     border: none;
 }
 
-.sign_in_modal{
+.sign_in_modal {
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1300;
 }
-.modal-dialog{
+
+.modal-dialog {
     z-index: 1300;
 }
-.modal-backdrop{
+
+.modal-backdrop {
     z-index: 1300;
+}
+@media screen and (max-width: 1200px) {
+    .nav{
+        display: none;
+    }
+}
+.nav-link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color-blue !important;
+    border: none !important;
+    a{
+        width: 100%;
+        height: 100%;
+    }
+}
+.nav-tabs{
+    border: none!important;
+    .active{
+        background-color: #ebedff !important;
+        color: black !important;
+    }
 }

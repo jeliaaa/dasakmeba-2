@@ -1,0 +1,62 @@
+@import '../../variables';
+
+.vacancy_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.filter_main{
+    width: 23%;
+    aspect-ratio: 1/0.5;
+    background-color: $primary-color-blue;
+    display: flex;
+    justify-content: center;
+    label{
+        display: flex;
+        justify-content: center;
+        span{
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            word-wrap: break-word;
+        }
+        color: $primary-color-gray;
+    }
+}
+.filter_bottom{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px 15px;
+    height: 500px;
+    flex-wrap: wrap;
+    .vacancy_filter{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+        width: 40%;
+        height: max-content;
+        background-color: $primary-color-gray;
+        .quantity{
+            width: fit-content !important;
+            background-color: #5f7adb;
+            border-radius: 15px;
+            padding: 5px 10px;
+            border: none;
+            color: $primary-color-gray;
+        }
+        p{
+            width: 50%;
+        }
+        label{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

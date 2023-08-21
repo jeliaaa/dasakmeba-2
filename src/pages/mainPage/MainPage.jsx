@@ -1,96 +1,63 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import './mainpage.scss'
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
-import { Link } from 'react-router-dom';
-import News from "../About/news/News"
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
 
 const MainPage = () => {
   const { t } = useTranslation();
-  
-  return (
-    <div className='mainPage_wrapper' style={{backgroundColor: '#fff'}}>
-      <Container className='news_container'>
-        <div className='news_heading'>
-          <h2>{t('news')}</h2>
-          <button className='news-btn'><Link to={'/'}>{t('news')}</Link></button>
+  const HeroBox = ({ heading }) => {
+    return (
+      <div className='hero_box'>
+        <div style={{ width: '55%', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <h3>{heading}</h3>
+          <p>Lorem consequuntur rerum quisquam, fuga cupiditate nisi, numquam voluptate! Provident magni earum consequatur nihil quo.</p>
+          <button type='button'>View More</button>
         </div>
-
-        <hr />
-        <Swiper
-          modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          cssMode={true}
-          navigation={true}
-          pagination={{ clickable: true }}
-          mousewheel={true}
-          keyboard={true}
-          slidesPerView={4}
-          spaceBetween={30}
-
-          className="news-swiper"
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 10
-            },
-            620: {
-              slidesPerView: 2,
-              spaceBetween: 10
-            },
-            750: {
-              slidesPerView: 3,
-              spaceBetween: 20
-            },
-            // when window width is >= 480px
-            1000: {
-              slidesPerView: 4,
-              spaceBetween: 30
-            },
-          }}
-        >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-            <SwiperSlide key={item}>
-              <div className='news_card'>
-                <img src="https://picsum.photos/id/237/200/150" alt="..." />
-                <div>
-                  <p>Lorem ipsum dolor impedit, vero eius, sit deserunt ratione eligendi</p>
-                  <p>{1}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
-
-      <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative' }} className='mt-5'>
-        <h2 style={{ position: 'absolute', top: 0, left: 10 }}>{t('partners')}</h2>
-        <hr className='w-100 mt-5' />
-        <div className='col-md-9 text-center m-0 p-0 ' style={{ display: 'flex', justifyContent: 'center', margin: '0px' }}>
+        <img src="https://picsum.photos/100/100" alt="..." />
+      </div>
+    )
+  }
+  return (
+    <div className='mainPage_wrapper' >
+      <Row  >
+        <Col xs={12} md={7} style={{paddingLeft: 0}} className='swiper_col'>
           <Swiper
-            direction={'vertical'}
+            modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
+            cssMode={true}
+            navigation={true}
+            pagination={{ clickable: true }}
             slidesPerView={1}
             spaceBetween={30}
-            mousewheel={true}
-            pagination={{
-              clickable: true,
+            autoplay={{
+              delay: 2000
             }}
-            modules={[Mousewheel, Pagination]}
-            className="partners-swiper"
+            className="news-swiper"
           >
-            <SwiperSlide><img src="https://academy.edu.ge/assets/img/logo.png" alt="cyberacademy" /></SwiperSlide>
-            <SwiperSlide><img src="https://gita.gov.ge/_nuxt/img/colored_ka.aee0290.png" alt="techpark" /></SwiperSlide>
+            {[1, 2, 3, 4].map((item) => (
+              <SwiperSlide key={item}>
+              </SwiperSlide>
+            ))}
           </Swiper>
-        </div>
+        </Col>
+        <Col xs={6} md={5} className='vacancy_hero_col'>
+          <HeroBox heading={t('vacancy')} />
+        </Col>
+      </Row>
+      <Row className='justify-content-around mt-2' >
+        <Col xs={12} md={6} className='vacancy_hero_col' style={{paddingLeft: 0}}>
+          <HeroBox heading={t('news')} />
+        </Col>
+        <Col xs={12} md={6} className='vacancy_hero_col'>
+          <HeroBox heading={t('projects')} />
+        </Col>
+      </Row>
 
-      </Container>
-      
     </div >
   )
 }
-//{t('report')}
 export default MainPage
